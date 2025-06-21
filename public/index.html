@@ -180,7 +180,7 @@
     async function loadUsers() {
         try {
             console.log('Fetching users from Express server...');
-            const response = await fetch('http://localhost:3000/api/users');
+            const response = await fetch('https://express-api-client.onrender.com/api/users');
             
             console.log('Response status:', response.status);
             
@@ -227,7 +227,7 @@
             const name = document.getElementById('createName').value;
             const email = document.getElementById('createEmail').value;
             
-            const response = await fetch('http://localhost:3000/api/users', {
+            const response = await fetch('https://express-api-client.onrender.com/api/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email })
@@ -253,7 +253,7 @@
         e.preventDefault();
         try {
             const id = document.getElementById('userId').value;
-            const response = await fetch(`http://localhost:3000/api/users/${id}`);
+            const response = await fetch(`https://express-api-client.onrender.com/api/users/${id}`);
             const data = await safeJsonParse(response);
             
             if (!response.ok) {
@@ -283,7 +283,7 @@
                 return;
             }
             
-            const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+            const response = await fetch(`https://express-api-client.onrender.com/api/users/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updateData)
@@ -307,7 +307,7 @@
     // Delete user
     async function deleteUser(id) {
         try {
-            const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+            const response = await fetch(`https://express-api-client.onrender.com/api/users/${id}`, {
                 method: 'DELETE'
             });
             
