@@ -34,8 +34,12 @@ app.use((req, res, next) => {
   next();
 });
 
+<<<<<<< HEAD
 // Serve static files
 app.use(express.static(path.join(__dirname)));
+=======
+app.use(express.static(path.join(__dirname, 'public')));
+>>>>>>> 9c5c87b (delpy)
 
 // Sample data
 const users = [
@@ -45,8 +49,15 @@ const users = [
 ];
 
 // Welcome route
+<<<<<<< HEAD
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
+=======
+
+// Serve index.html for root
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+>>>>>>> 9c5c87b (delpy)
 });
 
 // API Routes - explicitly define the path prefix
