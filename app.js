@@ -34,12 +34,10 @@ app.use((req, res, next) => {
   next();
 });
 
-<<<<<<< HEAD
 // Serve static files
 app.use(express.static(path.join(__dirname)));
-=======
+
 app.use(express.static(path.join(__dirname, 'public')));
->>>>>>> 9c5c87b (delpy)
 
 // Sample data
 const users = [
@@ -49,16 +47,14 @@ const users = [
 ];
 
 // Welcome route
-<<<<<<< HEAD
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
-=======
-
-// Serve index.html for root
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
->>>>>>> 9c5c87b (delpy)
 });
+
+// Commented out duplicate route handler
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// });
 
 // API Routes - explicitly define the path prefix
 app.get('/api/users', (req, res) => {
@@ -152,4 +148,4 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log(`API endpoint: http://localhost:${PORT}/api/users`);
-});
+})
