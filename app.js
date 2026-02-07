@@ -51,7 +51,9 @@ const users = [
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
-
+app.get('/api-visualizer', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'route-visualizer.html'));
+});
 // Commented out duplicate route handler
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
